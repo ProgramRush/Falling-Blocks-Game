@@ -19,25 +19,27 @@ public class StartManager : MonoBehaviour
     }
     public void CustomScene()
     {
-        startScreen.SetActive(false);
-        customScreen.SetActive(true);
+        OnStart(customScreen, startScreen);
     }
 
     public void BackToHome()
     {
-        startScreen.SetActive(true);
-        customScreen.SetActive(false);
+        OnStart(startScreen, customScreen);
     }
 
     public void Controls()
     {
-        startScreen.SetActive(false);
-        controlsScreen.SetActive(true);
+        OnStart(controlsScreen, startScreen);
     }
     public void ControlsBackHome()
     {
-        startScreen.SetActive(true);
-        controlsScreen.SetActive(false);
+        OnStart(startScreen, controlsScreen);
+    }
+
+    void OnStart(GameObject StartUI, GameObject StartUI_2)
+    {
+        StartUI.SetActive(true);
+        StartUI_2.SetActive(false);
     }
 
     public void Dropdown(int index)
